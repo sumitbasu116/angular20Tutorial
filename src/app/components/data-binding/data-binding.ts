@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-data-binding',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './data-binding.html',
   styleUrl: './data-binding.css'
 })
@@ -19,6 +20,10 @@ export class DataBinding {
   inputTypeCheck: string='checkbox';
 
   myClassName: string = 'myColor';
+
+  onCityChange(){
+    alert("City Changed");
+  }
 
   showAlert(){
     alert("This is Angular 20 Tutorial");

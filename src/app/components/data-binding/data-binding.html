@@ -32,5 +32,17 @@
         <td>
             <button (click)="changeCourse()">Change Course</button>
         </td>
+        <td>
+            <select (change)="onCityChange()">
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="courseName">
+        </td>
     </tr>
 </table>
