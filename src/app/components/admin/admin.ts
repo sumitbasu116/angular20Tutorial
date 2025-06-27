@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './admin.css'
 })
 export class Admin {
+  firstName="Sumit";
+  courseName = 'Angular 20 Tutorial';
 
+  rollNum = 111;
+  
 }
