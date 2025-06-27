@@ -14,6 +14,10 @@ export class DataBinding {
 
   minChar: number = 3;
 
+  inputTypeRadio: string='radio';
+
+  inputTypeCheck: string='checkbox';
+
   constructor(){
     
   }
