@@ -20,6 +20,14 @@ export class DataBinding {
 
   myClassName: string = 'myColor';
 
+  showAlert(){
+    alert("This is Angular 20 Tutorial");
+  }
+
+  changeCourse(){
+    this.courseName = "React JS Tutorial";
+  }
+
   constructor(){
     
   }
