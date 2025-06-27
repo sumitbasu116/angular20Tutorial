@@ -18,6 +18,8 @@ export class DataBinding {
 
   inputTypeCheck: string='checkbox';
 
+  myClassName: string = 'myColor';
+
   constructor(){
     
   }
