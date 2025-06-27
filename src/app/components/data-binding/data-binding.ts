@@ -10,6 +10,10 @@ export class DataBinding {
   courseName: string = 'Angular 20 Tutorial';
   productPrice: number = 12500;
 
+  maxChar: number = 5;
+
+  minChar: number = 3;
+
   constructor(){
     
   }
