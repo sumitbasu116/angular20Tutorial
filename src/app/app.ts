@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { User } from './components/user/user';
-import { Admin } from './components/admin/admin';
+import { DataBinding } from './components/data-binding/data-binding';
 
 @Component({
   selector: 'app-root',
-  imports: [User,Admin],
+  imports: [DataBinding],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'angular20Tutorial';
+  
 }
