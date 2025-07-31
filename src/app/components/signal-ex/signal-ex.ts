@@ -8,18 +8,20 @@ import { Component, signal } from '@angular/core';
 })
 export class SignalEx {
 
-  firstName: string ="Sumit";
+  firstName: string = "Sumit";
   productName = 'Moto';
   courseName = signal<string>('Angular');
   courseDuration = signal('15 Videos');
 
-  constructor(){
+  constructor() {
     this.firstName = 'Sumit';
     console.log(this.firstName);
-    
-    this.courseName.set('React');
-
     console.log(this.courseName());
-    
+    setTimeout(
+      () => {
+        this.courseName.set('React');
+      }, 5000
+    );
+    console.log(this.courseName());
   }
 }
