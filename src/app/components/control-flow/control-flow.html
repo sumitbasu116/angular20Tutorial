@@ -7,29 +7,29 @@
 <button (click)="hideP()">Hide Paragraph</button>
 
 <br>
-<input type="text" [(ngModel)]="name"/>
+<input type="text" [(ngModel)]="name" />
 <div>
     @if (name=='jan'){
     <p>January</p>
     } @else if (name=='feb'){
     <p>February</p>
     } @else{
-        <p>Wrong Input</p>
+    <p>Wrong Input</p>
     }
 
 </div>
 
 <div>
     <ul>
-    @for(item of cityList; track $index){
+        @for(item of cityList; track $index){
         <li>{{item}}</li>
-    }
+        }
     </ul>
 </div>
 <div>
     <select name="" id="">
         @for(item of cityList; track $index){
-            <option value="">{{item}}</option>
+        <option value="">{{item}}</option>
         }
     </select>
 </div>
@@ -44,11 +44,12 @@
     </thead>
     <tbody>
         @for(item of studentList; track $index){
-            <tr>
+        <tr>
+            <td>{{$index+1}}</td>
             <td>{{item.name}}</td>
             <td>{{item.city}}</td>
             <td>{{item.isActive}}</td>
-            </tr>
+        </tr>
         }
     </tbody>
 </table>
