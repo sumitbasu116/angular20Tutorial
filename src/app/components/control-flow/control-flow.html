@@ -48,7 +48,13 @@
             <td>{{$index+1}}</td>
             <td>{{item.name}}</td>
             <td>{{item.city}}</td>
-            <td>{{item.isActive}}</td>
+            <td>
+                @if(item.isActive){
+                    <h6>ACTIVE</h6>
+                }@else{
+                    <h6>INACTIVE</h6>
+                }
+            </td>
         </tr>
         }
     </tbody>
