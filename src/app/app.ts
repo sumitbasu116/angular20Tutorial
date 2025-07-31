@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { SignalEx } from './components/signal-ex/signal-ex';
+import { ControlFlow } from './components/control-flow/control-flow';
 
 @Component({
   selector: 'app-root',
-  imports: [SignalEx],
+  imports: [ControlFlow],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
