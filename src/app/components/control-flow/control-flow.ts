@@ -13,6 +13,8 @@ export class ControlFlow {
 
   name: string = 'feb';
 
+  cityList: string[] = ["Pune","Mumbai","Nagpur","Manipal"];
+
   showP() {
     this.isVisiblePara = true
   }
