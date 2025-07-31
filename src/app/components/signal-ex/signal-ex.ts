@@ -15,6 +15,11 @@ export class SignalEx {
 
   constructor(){
     this.firstName = 'Sumit';
+    console.log(this.firstName);
+    
     this.courseName.set('React');
+
+    console.log(this.courseName());
+    
   }
 }
