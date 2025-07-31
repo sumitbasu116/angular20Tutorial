@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signal-ex',
@@ -12,6 +12,10 @@ export class SignalEx {
   productName = 'Moto';
   courseName = signal<string>('Angular');
   courseDuration = signal('15 Videos');
+
+  courseDetail = computed(
+    ()=> this.courseName() +" "+this.courseDuration()
+  );
 
   constructor() {
     this.firstName = 'Sumit';
