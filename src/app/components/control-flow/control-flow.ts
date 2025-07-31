@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ControlFlow {
 
-  isVisiblePara: boolean = true;
+  isVisiblePara: boolean = false;
 
+  showP() {
+    this.isVisiblePara = true
+  }
+  hideP() {
+    this.isVisiblePara = false
+  }
 }
