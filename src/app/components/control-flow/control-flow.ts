@@ -15,6 +15,13 @@ export class ControlFlow {
 
   cityList: string[] = ["Pune","Mumbai","Nagpur","Manipal"];
 
+  studentList: any[] = [
+    {name:"AAA",city:"Pune",isActive:false},
+    {name:"BBB",city:"Mumbai",isActive:false},
+    {name:"CCC",city:"Goa",isActive:true},
+    {name:"DDD",city:"Ranchi",isActive:false}
+  ];
+
   showP() {
     this.isVisiblePara = true
   }

@@ -33,3 +33,22 @@
         }
     </select>
 </div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of studentList; track $index){
+            <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.isActive}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
