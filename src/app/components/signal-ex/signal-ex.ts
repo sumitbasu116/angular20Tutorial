@@ -12,4 +12,9 @@ export class SignalEx {
   productName = 'Moto';
   courseName = signal<string>('Angular');
   courseDuration = signal('15 Videos');
+
+  constructor(){
+    this.firstName = 'Sumit';
+    this.courseName.set('React');
+  }
 }
