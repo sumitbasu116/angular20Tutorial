@@ -1,7 +1,18 @@
 @if(isVisiblePara){
-    <p>control-flow works!</p>
+<p>control-flow works!</p>
 } @else{
-    <p>Default control-flow works!</p>
+<p>Default control-flow works!</p>
 }
 <button (click)="showP()">Show Paragraph</button>
 <button (click)="hideP()">Hide Paragraph</button>
+
+<br>
+<input type="text" [(ngModel)]="name"/>
+<div>
+    @if (name=='jan'){
+    <p>January</p>
+    } @else if (name=='feb'){
+    <p>February</p>
+    }
+
+</div>
