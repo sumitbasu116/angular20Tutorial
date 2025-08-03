@@ -1,9 +1,9 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass, NgStyle, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass,NgStyle],
+  imports: [NgClass,NgStyle,UpperCasePipe,TitleCasePipe],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
@@ -46,6 +46,10 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
   div1ClassName = signal<string>("");
 
   isDiv2Green = signal<boolean>(false);
+
+  firstName = signal<string>("Sumit");
+
+  coursName = signal<string>("Angular 20 Tutorial");
 
   setBgClass(className:string){
     this.div1ClassName.set(className);

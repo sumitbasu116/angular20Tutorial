@@ -21,3 +21,15 @@
         <button class="btn btn-success" (click)="toggleDiv2Color()">Toggle BG Color</button>
     </div>
 </div>
+<div class="row">
+    <div class="col-3">
+        <div class="p-3">
+            First Name : {{firstName() | uppercase}}
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3">
+            First Name : {{coursName() | titlecase}}
+        </div>
+    </div>
+</div>
