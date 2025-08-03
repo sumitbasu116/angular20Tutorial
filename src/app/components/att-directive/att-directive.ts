@@ -1,5 +1,5 @@
 import { NgClass, NgStyle } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
@@ -7,7 +7,15 @@ import { Component, signal } from '@angular/core';
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
-export class AttDirective {
+export class AttDirective implements OnInit{
+
+  constructor(){
+    console.log('constructor');
+  }
+
+  ngOnInit(): void {
+    console.log('ngOnInit');
+  }
 
   div1ClassName = signal<string>("");
 
