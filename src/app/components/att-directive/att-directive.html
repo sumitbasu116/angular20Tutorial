@@ -5,11 +5,19 @@
             Div 1 - {{div1ClassName()}}
         </div>
     </div>
+    <div class="col-3">
+        <div class="p-3">
+            Div 2 - {{isDiv2Green()}}
+        </div>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-3">
         <button class="btn btn-success" (click)="setBgClass('bg-success')">Green</button>
         <button class="btn btn-danger" (click)="setBgClass('bg-danger')">Red</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="toggleBgColor()">Toggle BG Color</button>
     </div>
 </div>
