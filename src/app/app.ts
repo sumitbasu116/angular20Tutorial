@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ControlFlow } from './components/control-flow/control-flow';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ControlFlow, RouterLink],
+  imports: [RouterLink,RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
