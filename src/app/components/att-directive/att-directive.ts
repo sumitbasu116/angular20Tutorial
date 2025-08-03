@@ -1,9 +1,9 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass],
+  imports: [NgClass,NgStyle],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
@@ -17,7 +17,7 @@ export class AttDirective {
     this.div1ClassName.set(className);
   }
 
-  toggleBgColor(){
+  toggleDiv2Color(){
     this.isDiv2Green.set(!this.isDiv2Green());
   }
 }
