@@ -29,7 +29,21 @@
     </div>
     <div class="col-3">
         <div class="p-3">
-            First Name : {{coursName() | titlecase}}
+            Course Name : {{coursName() | titlecase}}
+        </div>
+    </div>
+
+    <div class="col-3">
+        <div class="p-3">
+            Roll Number : {{rollNumList | slice:0:3}}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="p-3">
+            student object: {{stdentObj | json}}
         </div>
     </div>
 </div>
