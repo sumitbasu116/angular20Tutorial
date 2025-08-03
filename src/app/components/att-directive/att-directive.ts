@@ -15,6 +15,8 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
 
   ngOnInit(): void {
     console.log('ngOnInit');
+    //to trigger API call
+    //to subscribe
   }
 
   ngAfterContentInit(): void {
@@ -27,6 +29,8 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
 
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit');
+    //to deal with view child
+    //to subscribe
   }
 
   ngAfterViewChecked(): void {
@@ -35,6 +39,8 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
 
   ngOnDestroy(): void {
     console.log('ngOnDestroy');
+    //to restrict user for navigation
+    //unsubscribe
   }
 
   div1ClassName = signal<string>("");
