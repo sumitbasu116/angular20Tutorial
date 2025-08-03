@@ -1,5 +1,5 @@
 import { NgClass, NgStyle } from '@angular/common';
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit, signal } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
@@ -7,7 +7,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
-export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
+export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy{
 
   constructor(){
     console.log('constructor');
@@ -31,6 +31,10 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
 
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked');
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy');
   }
 
   div1ClassName = signal<string>("");
