@@ -1,9 +1,11 @@
-import { JsonPipe, NgClass, NgStyle, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { DatePipe, JsonPipe, NgClass, NgStyle, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass,NgStyle,UpperCasePipe,TitleCasePipe,SlicePipe,JsonPipe],
+  imports: [NgClass,NgStyle,UpperCasePipe,TitleCasePipe,SlicePipe,JsonPipe
+    ,DatePipe
+  ],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
@@ -52,6 +54,8 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
   coursName = signal<string>("Angular 20 Tutorial");
 
   rollNumList = [10,11,12,13,14,15,16];
+
+  currDate : Date = new Date();
 
   stdentObj: any ={
     name:'Sumit',
