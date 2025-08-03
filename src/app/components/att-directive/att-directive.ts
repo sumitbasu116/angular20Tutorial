@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
