@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-4">
+    <div class="col-4 table-responsive">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -21,14 +21,14 @@
             </tbody>
         </table>
     </div>
-    <div class="col-4">
+    <div class="col-4 table-responsive">
         <ul>
             @for(item of todoList; track $index){
                 <li>{{item.title}}</li>
             }
         </ul>
     </div>
-    <div class="col-4">
+    <div class="col-4 table-responsive">
         <table class="table table-bordered">
             <thead>
                 <tr>
