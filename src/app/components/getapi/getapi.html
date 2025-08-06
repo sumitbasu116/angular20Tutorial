@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-6">
+    <div class="col-4">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -21,11 +21,33 @@
             </tbody>
         </table>
     </div>
-    <div class="col-6">
+    <div class="col-4">
         <ul>
             @for(item of todoList; track $index){
                 <li>{{item.title}}</li>
             }
         </ul>
+    </div>
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of busBookingUsers; track $index){
+                    <tr>
+                        <td>{{item.userName}}</td>
+                        <td>{{item.emailId}}</td>
+                        <td>{{item.fullName}}</td>
+                        <td>{{item.role}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

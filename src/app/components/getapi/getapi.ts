@@ -13,9 +13,8 @@ export class Getapi implements OnInit{
 
   userList: any[] =[];
   todoList: any[] = [];
-
+  busBookingUsers: any[] = [];
   ngOnInit(): void {
-    debugger;
     this.getUsers();
     this.getTodoItems();
   }
@@ -33,8 +32,16 @@ export class Getapi implements OnInit{
     this.http.get("https://jsonplaceholder.typicode.com/todos")
     .subscribe(
       (res:any)=>{
-        debugger;
         this.todoList = res;
+      }
+    );
+  }
+
+  getAllBusbookingUsers(){
+    this.http.get("https://api.freeprojectapi.com/api/BusBooking/GetAllUsers")
+    .subscribe(
+      (res:any)=>{
+        this.busBookingUsers = res;
       }
     );
   }
