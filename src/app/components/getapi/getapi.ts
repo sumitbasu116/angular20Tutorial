@@ -12,19 +12,29 @@ export class Getapi implements OnInit{
   http = inject(HttpClient);
 
   userList: any[] =[];
+  todoList: any[] = [];
 
   ngOnInit(): void {
     debugger;
     this.getUsers();
+    this.getTodoItems();
   }
 
   getUsers(){
-    debugger;
     this.http.get("https://jsonplaceholder.typicode.com/users")
     .subscribe(
       (res:any)=>{
-        debugger;
         this.userList = res;
+      }
+    );
+  }
+
+  getTodoItems(){
+    this.http.get("https://jsonplaceholder.typicode.com/todos")
+    .subscribe(
+      (res:any)=>{
+        debugger;
+        this.todoList = res;
       }
     );
   }

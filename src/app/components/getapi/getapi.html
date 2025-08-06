@@ -21,4 +21,11 @@
             </tbody>
         </table>
     </div>
+    <div class="col-6">
+        <ul>
+            @for(item of todoList; track $index){
+                <li>{{item.title}}</li>
+            }
+        </ul>
+    </div>
 </div>
