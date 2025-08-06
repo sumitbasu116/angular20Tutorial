@@ -14,13 +14,16 @@ export class Getapi implements OnInit{
   userList: any[] =[];
 
   ngOnInit(): void {
+    debugger;
     this.getUsers();
   }
 
   getUsers(){
+    debugger;
     this.http.get("https://jsonplaceholder.typicode.com/users")
     .subscribe(
       (res:any)=>{
+        debugger;
         this.userList = res;
       }
     );
