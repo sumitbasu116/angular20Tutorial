@@ -1,1 +1,24 @@
-<p>getapi works!</p>
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Website</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of userList; track $index){
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.website}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
