@@ -17,6 +17,7 @@ export class Getapi implements OnInit{
   ngOnInit(): void {
     this.getUsers();
     this.getTodoItems();
+    this.getAllBusbookingUsers();
   }
 
   getUsers(){
@@ -41,7 +42,7 @@ export class Getapi implements OnInit{
     this.http.get("https://api.freeprojectapi.com/api/BusBooking/GetAllUsers")
     .subscribe(
       (res:any)=>{
-        this.busBookingUsers = res;
+        this.busBookingUsers = res.data;
       }
     );
   }
