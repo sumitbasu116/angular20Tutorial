@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-getapi',
@@ -7,11 +7,15 @@ import { Component, inject } from '@angular/core';
   templateUrl: './getapi.html',
   styleUrl: './getapi.css'
 })
-export class Getapi {
+export class Getapi implements OnInit{
 
   http = inject(HttpClient);
 
   userList: any[] =[];
+
+  ngOnInit(): void {
+    this.getUsers();
+  }
 
   getUsers(){
     this.http.get("https://jsonplaceholder.typicode.com/users")
