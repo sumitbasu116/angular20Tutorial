@@ -7,19 +7,26 @@ import { Component, inject, OnInit } from '@angular/core';
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
-export class User implements OnInit{
+export class User implements OnInit {
   userList: any[] = [];
+  userObj: any = {
+    "userId": 0,
+    "emailId": "",
+    "password": "",
+    "fullName": "",
+    "mobileNo": ""
+  };
   http = inject(HttpClient);
 
   ngOnInit(): void {
     this.getUsers();
   }
 
-  getUsers(){
+  getUsers() {
     this.http.get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers').subscribe(
-    (res:any)=>{
-      this.userList = res;
-    }
+      (res: any) => {
+        this.userList = res;
+      }
     );
   }
 }
