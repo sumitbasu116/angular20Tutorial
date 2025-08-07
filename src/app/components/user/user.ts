@@ -39,7 +39,7 @@ export class User implements OnInit {
         },
         error: (error) => {
           debugger;
-          alert("Error-"+error);
+          alert("Error-"+error.error);
         }
       }
     );
