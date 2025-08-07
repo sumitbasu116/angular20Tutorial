@@ -38,6 +38,7 @@ export class User implements OnInit {
           this.getUsers();
         },
         error: (error) => {
+          debugger;
           alert("Error-"+error);
         }
       }
