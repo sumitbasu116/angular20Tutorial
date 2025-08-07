@@ -12,7 +12,7 @@ export class User implements OnInit{
   http = inject(HttpClient);
 
   ngOnInit(): void {
-    
+    this.getUsers();
   }
 
   getUsers(){
