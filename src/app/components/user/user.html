@@ -5,7 +5,27 @@
                 User List
             </div>
             <div class="card-body">
+                <table class="table-bordered">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Email ID</th>
+                            <th>Mobile No.</th>
+                            <th>Full Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(item of userList; track $index){
+                        <tr>
+                            <td>{{item.userId}}</td>
+                            <td>{{item.emailId}}</td>
+                            <td>{{item.mobileNo}}</td>
+                            <td>{{item.fullName}}</td>
+                        </tr>
+                        }
 
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
