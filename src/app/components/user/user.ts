@@ -30,4 +30,18 @@ export class User implements OnInit {
       }
     );
   }
+  onSaveUser() {
+    this.http.post('https://api.freeprojectapi.com/api/GoalTracker/register',this.userObj).subscribe(
+      {
+        next: (res) => {
+          alert("User Created Success.");
+          this.getUsers();
+        },
+        error: (error) => {
+          alert("Error-"+error);
+        }
+      }
+    );
+  }
 }
+
