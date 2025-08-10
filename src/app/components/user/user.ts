@@ -31,7 +31,7 @@ export class User implements OnInit {
     );
   }
   onSaveUser() {
-    this.http.post('https://api.freeprojectapi.com/api/GoalTracker/register',this.userObj).subscribe(
+    this.http.post('https://api.freeprojectapi.com/api/GoalTracker/register', this.userObj).subscribe(
       {
         next: (res) => {
           alert("User Created Success.");
@@ -39,32 +39,43 @@ export class User implements OnInit {
         },
         error: (error) => {
           debugger;
-          alert("Error-"+error.error);
+          alert("Error-" + error.error);
         }
       }
     );
   }
 
-  onUpdateUser(){
-    debugger;
+  onUpdateUser() {
+
+    this.http.put("https://api.freeprojectapi.com/api/GoalTracker/updateUser?id=" +
+      this.userObj.userId, this.userObj).subscribe(
+        {
+          next: (res) => {
+            alert("User Updated Success.");
+            this.getUsers();
+          },
+          error: (error) => {
+            alert("Error-" + error.error);
+          }
+        }
+      )
   }
 
-  onEdit(item:any){
+  onEdit(item: any) {
     debugger;
     this.userObj = item;
   }
-  onDelete(item:any){
+  onDelete(item: any) {
     debugger;
     //this.userObj = item;
   }
-  onReset(){
-    this.userObj= {
-    "userId": 0,
-    "emailId": "",
-    "password": "",
-    "fullName": "",
-    "mobileNo": ""
-  };
+  onReset() {
+    this.userObj = {
+      "userId": 0,
+      "emailId": "",
+      "password": "",
+      "fullName": "",
+      "mobileNo": ""
+    };
   }
 }
-
