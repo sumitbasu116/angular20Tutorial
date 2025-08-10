@@ -87,7 +87,7 @@
                             <button class="btn btn-secondary">Reset</button>
                         </div>
                         <div class="col-6 text-center">
-                            <button class="btn btn-success" (click)="onSaveUser()">Save</button>
+                            <button class="btn btn-success" [disabled]="userForm.invalid" (click)="onSaveUser()">Save</button>
                         </div>
                     </div>
                 </form>
