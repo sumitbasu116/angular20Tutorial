@@ -41,38 +41,45 @@
             </div>
             <div class="card-body">
                 <form #formValue="ngForm">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="">Email</label>
-                        <input type="text" #email="ngModel" required [(ngModel)]="userObj.emailId" name="emailId" class="form-control">
-                        <div class="text-danger">
-                            @if(email.errors?.['required']){
-                            <span>This is a required field.</span>
-                            }
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <label for="">Password</label>
-                        <input type="text" #pwd="ngModel" required minlength="4" [(ngModel)]="userObj.password" name="pwd" class="form-control">
-                        <div class="text-danger">
-                            @if(pwd.errors?.['required']){
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Email</label>
+                            <input type="text" #email="ngModel" required [(ngModel)]="userObj.emailId" name="emailId"
+                                class="form-control">
+                            @if(email.touched){
+                            <div class="text-danger">
+                                @if(email.errors?.['required']){
                                 <span>This is a required field.</span>
+                                }
+                            </div>
                             }
-                            @if(pwd.errors?.['minlength']){
+
+                        </div>
+                        <div class="col-6">
+                            <label for="">Password</label>
+                            <input type="text" #pwd="ngModel" required minlength="4" [(ngModel)]="userObj.password"
+                                name="pwd" class="form-control">
+                            @if(email.touched){
+                            <div class="text-danger">
+                                @if(pwd.errors?.['required']){
+                                <span>This is a required field.</span>
+                                }
+                                @if(pwd.errors?.['minlength']){
                                 <span>Minimum Character Length should be 4</span>
+                                }
+                            </div>
                             }
                         </div>
-                    </div>
-                    <div class="col-6">
-                        <label for="">Full Name</label>
-                        <input type="text" [(ngModel)]="userObj.fullName" name="fullName" class="form-control">
-                    </div>
-                    <div class="col-6">
-                        <label for="">Mobile No.</label>
-                        <input type="text" [(ngModel)]="userObj.mobileNo" name="mobNo" class="form-control">
-                    </div>
+                        <div class="col-6">
+                            <label for="">Full Name</label>
+                            <input type="text" [(ngModel)]="userObj.fullName" name="fullName" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Mobile No.</label>
+                            <input type="text" [(ngModel)]="userObj.mobileNo" name="mobNo" class="form-control">
+                        </div>
 
-                </div>
+                    </div>
                 </form>
                 <div class="row pt-3">
                     <div class="col-6 text-center">
@@ -81,7 +88,8 @@
                     <div class="col-6 text-center">
                         {{formValue.invalid}}
                         @if(userObj.userId===0){
-                        <button class="btn btn-success" [disabled]="formValue.invalid" (click)="onSaveUser()">Save</button>
+                        <button class="btn btn-success" [disabled]="formValue.invalid"
+                            (click)="onSaveUser()">Save</button>
                         } @else{
                         <button class="btn btn-warning" (click)="onUpdateUser()">Update</button>
                         }
