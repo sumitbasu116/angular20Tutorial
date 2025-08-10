@@ -40,10 +40,27 @@
                         <div class="col-6">
                             <label for="">Email</label>
                             <input type="text" formControlName="emailId" class="form-control">
+                            @if(userForm.controls['emailId'].touched){
+                            <div class="text-danger">
+                                @if(userForm.controls['emailId'].errors?.['required']){
+                                <span>This is a required field.</span>
+                                }
+                                @if(userForm.controls['emailId'].errors?.['minlength']){
+                                <span>Minimum Character Length should be 4</span>
+                                }
+                            </div>
+                            }
                         </div>
                         <div class="col-6">
                             <label for="">Password</label>
                             <input type="text" formControlName="password" class="form-control">
+                            @if(userForm.controls['password'].touched){
+                            <div class="text-danger">
+                                @if(userForm.controls['password'].errors?.['required']){
+                                <span>This is a required field.</span>
+                                }
+                            </div>
+                            }
                         </div>
                         <div class="col-6">
                             <label for="">Full Name</label>
@@ -52,6 +69,16 @@
                         <div class="col-6">
                             <label for="">Mobile No.</label>
                             <input type="text" formControlName="mobileNo" class="form-control">
+                            @if(userForm.controls['mobileNo'].touched){
+                            <div class="text-danger">
+                                @if(userForm.controls['mobileNo'].errors?.['required']){
+                                <span>This is a required field.</span>
+                                }
+                                @if(userForm.controls['mobileNo'].errors?.['minlength']){
+                                <span>Minimum Character Length should be 10</span>
+                                }
+                            </div>
+                            }
                         </div>
 
                     </div>
