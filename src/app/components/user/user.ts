@@ -65,6 +65,8 @@ export class User implements OnInit {
     this.userObj = item;
   }
   onDelete(id: number) {
+   const isDelete = confirm("Are you sure want to delete?");
+   if(isDelete){
     this.http.delete("https://api.freeprojectapi.com/api/GoalTracker/deleteUserById?id=" +
       id).subscribe(
         {
@@ -77,6 +79,8 @@ export class User implements OnInit {
           }
         }
       )
+   }
+    
   }
   onReset() {
     this.userObj = {
