@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-reactive-user',
   imports: [ReactiveFormsModule],
@@ -15,6 +15,17 @@ export class ReactiveUser implements OnInit {
   ngOnInit(): void {
     this.getUsers();
   }
+
+  userForm: FormGroup= new FormGroup(
+    {
+      userId: new FormControl(0),
+      emailId: new FormControl(""),
+      mobileNo: new FormControl(""),
+      password: new FormControl(""),
+      fullName: new FormControl("")
+    }
+  );
+
   getUsers() {
     this.http.get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers').subscribe(
       (res: any) => {
