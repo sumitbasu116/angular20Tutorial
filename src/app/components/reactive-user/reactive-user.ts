@@ -33,4 +33,19 @@ export class ReactiveUser implements OnInit {
       }
     );
   }
+  onSaveUser() {
+    const formValue=this.userForm.value;
+    this.http.post('https://api.freeprojectapi.com/api/GoalTracker/register', formValue).subscribe(
+      {
+        next: (res) => {
+          alert("User Created Success.");
+          this.getUsers();
+        },
+        error: (error) => {
+          debugger;
+          alert("Error-" + error.error);
+        }
+      }
+    );
+  }
 }
