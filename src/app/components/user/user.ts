@@ -44,5 +44,27 @@ export class User implements OnInit {
       }
     );
   }
+
+  onUpdateUser(){
+    debugger;
+  }
+
+  onEdit(item:any){
+    debugger;
+    this.userObj = item;
+  }
+  onDelete(item:any){
+    debugger;
+    //this.userObj = item;
+  }
+  onReset(){
+    this.userObj= {
+    "userId": 0,
+    "emailId": "",
+    "password": "",
+    "fullName": "",
+    "mobileNo": ""
+  };
+  }
 }
 
