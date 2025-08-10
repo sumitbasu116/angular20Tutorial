@@ -43,11 +43,18 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="">Email</label>
-                        <input type="text" [(ngModel)]="userObj.emailId" class="form-control">
+                        <input type="text" required [(ngModel)]="userObj.emailId" class="form-control">
+                    <div class="text-danger">
+                        <span>This is a required field.</span>
+                    </div>
                     </div>
                     <div class="col-6">
                         <label for="">Password</label>
-                        <input type="text" [(ngModel)]="userObj.password" class="form-control">
+                        <input type="text" required minlength="4" [(ngModel)]="userObj.password" class="form-control">
+                    <div class="text-danger">
+                        <span>This is a required field.</span>
+                        <span>Minimum Character Length should be 4</span>
+                    </div>
                     </div>
                     <div class="col-6">
                         <label for="">Full Name</label>
