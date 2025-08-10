@@ -1,21 +1,15 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-reactive-user',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './reactive-user.html',
   styleUrl: './reactive-user.css'
 })
 export class ReactiveUser implements OnInit {
   userList: any[] = [];
-  userObj: any = {
-    "userId": 0,
-    "emailId": "",
-    "password": "",
-    "fullName": "",
-    "mobileNo": ""
-  };
   http = inject(HttpClient);
 
   ngOnInit(): void {
