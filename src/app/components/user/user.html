@@ -24,7 +24,7 @@
                             <td>{{item.fullName}}</td>
                             <td>
                                 <button class='btn btn-primary btn-sm' (click)="onEdit(item)">Update</button>
-                                <button class='btn btn-danger btn-sm' (click)="onDelete(item)">Delete</button>
+                                <button class='btn btn-danger btn-sm' (click)="onDelete(item.userId)">Delete</button>
                             </td>
                         </tr>
                         }

@@ -62,12 +62,21 @@ export class User implements OnInit {
   }
 
   onEdit(item: any) {
-    debugger;
     this.userObj = item;
   }
-  onDelete(item: any) {
-    debugger;
-    //this.userObj = item;
+  onDelete(id: number) {
+    this.http.delete("https://api.freeprojectapi.com/api/GoalTracker/deleteUserById?id=" +
+      id).subscribe(
+        {
+          next: (res) => {
+            alert("User Deleted Success.");
+            this.getUsers();
+          },
+          error: (error) => {
+            alert("Error-" + error.error);
+          }
+        }
+      )
   }
   onReset() {
     this.userObj = {
