@@ -7,6 +7,7 @@ import { AttDirective } from './components/att-directive/att-directive';
 import { Getapi } from './components/getapi/getapi';
 import { User } from './components/user/user';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
+import { PipeEx } from './components/pipe-ex/pipe-ex';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,9 @@ export const routes: Routes = [
     {
         path:'reactive-user',
         component:ReactiveUser
+    },
+    {
+        path:'pipe',
+        component:PipeEx
     }
 ];
