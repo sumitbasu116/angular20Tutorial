@@ -1,10 +1,28 @@
-<p>pipe-ex works!</p>
-
 <div class="row">
     <div class="col-3">
-        <span><p>{{userName}}</p></span>
-        <span><p>With uppercase==> {{userName | lowercase}}</p></span>
-        <span><p>With lowercase==> {{courseName | uppercase}}</p></span>
-        <span><p>With capitalcase==> {{duration | titlecase}}</p></span>
+        <span>
+            <p>{{userName}}</p>
+        </span>
+        <span>
+            <p>With uppercase==> {{userName | lowercase}}</p>
+        </span>
+        <span>
+            <p>With lowercase==> {{courseName | uppercase}}</p>
+        </span>
+        <span>
+            <p>With capitalcase==> {{duration | titlecase}}</p>
+        </span>
+    </div>
+    <div class="col-4">
+        <p>{{currDate}}</p>
+        <p>{{currDate | date}}</p>
+        <p>{{currDate | date:'dd-MM-yyyy'}}</p>
+        <p>{{currDate | date:'dd-MM-yy'}}</p>
+        <p>{{currDate | date:'dd-MMM-yy'}}</p>
+        <p>{{currDate | date:'dd-MMMM-yy'}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{rollNumber}}</p>
+        <p>after slice==> {{rollNumber | slice:0:2}}</p>
     </div>
 </div>
