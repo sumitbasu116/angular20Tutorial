@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,11 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class Master {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getSum(num1: number,num2: number){
     debugger;
     const res = num1 + num2;
     return res;
+  }
+
+  getUsers(){
+    return this.http.get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers');
   }
 }
