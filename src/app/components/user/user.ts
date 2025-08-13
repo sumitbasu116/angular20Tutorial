@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-user',
@@ -18,9 +19,12 @@ export class User implements OnInit {
     "mobileNo": ""
   };
   http = inject(HttpClient);
+  masterService = inject(Master);
 
   ngOnInit(): void {
     this.getUsers();
+    debugger;
+    const result = this.masterService.getSum(20,50);
   }
 
   getUsers() {
