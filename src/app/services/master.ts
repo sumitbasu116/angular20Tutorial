@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class Master {
-
+  appName : string = "Angular App";
   constructor(private http: HttpClient) { }
-
+  
   getSum(num1: number,num2: number){
     debugger;
     const res = num1 + num2;

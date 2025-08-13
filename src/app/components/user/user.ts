@@ -25,11 +25,17 @@ export class User implements OnInit {
     this.getUsers();
     debugger;
     const result = this.masterService.getSum(20,50);
+    const appData = this.masterService.appName;
   }
 
   getUsers() {
-    this.http.get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers').subscribe(
-      (res: any) => {
+    // this.http.get('https://api.freeprojectapi.com/api/GoalTracker/getAllUsers').subscribe(
+    //   (res: any) => {
+    //     this.userList = res;
+    //   }
+    // );
+    this.masterService.getUsers().subscribe(
+      (res:any)=>{
         this.userList = res;
       }
     );
