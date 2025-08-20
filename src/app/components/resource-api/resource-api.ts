@@ -11,6 +11,7 @@ export class ResourceApi {
   userData = resource({
     loader: ()=>{
       return fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res=>res.json());
     }
   })
 }
