@@ -21,6 +21,8 @@ export class Login {
     if(this.loginObj.username == 'Admin' &&
       this.loginObj.password == '112233'){
         this.router.navigateByUrl("admin");
+    } else{
+      alert('Wrong user name OR password');
     }
   }
 }
