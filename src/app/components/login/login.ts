@@ -20,7 +20,8 @@ export class Login {
   onLogin(){
     if(this.loginObj.username == 'Admin' &&
       this.loginObj.password == '112233'){
-        this.router.navigateByUrl("admin");
+      this.router.navigateByUrl("admin");
+      localStorage.setItem('Angular20User',this.loginObj.username);
     } else{
       alert('Wrong user name OR password');
     }
