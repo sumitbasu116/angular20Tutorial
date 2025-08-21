@@ -23,4 +23,10 @@ export class ResourceApi {
      stream:()=> this.http.get<any[]>("https://jsonplaceholder.typicode.com/users")
     }
   )
+
+  constructor(){
+    setTimeout(() => {
+    this.userData.reload()
+  }, 6000);
+  }
 }
