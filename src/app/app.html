@@ -6,19 +6,23 @@
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item" >
+        <li class="nav-item">
           <a class="nav-link active" routerLink="signal">Signal</a>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item">
           <a class="nav-link" routerLink="admin">Admin</a>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item">
           <a class="nav-link" routerLink="data-binding">Data Binding</a>
         </li>
       </ul>
       <form class="d-flex">
-        
+        @if(loggedInUserName == ''){
         <button class="btn btn-primary" type="button" routerLink="login">Login</button>
+        } @else{
+        <button class="btn btn-warning" type="button">{{loggedInUserName}}</button>
+        <button class="btn btn-danger" type="button">Logout</button>
+        }
       </form>
     </div>
   </div>

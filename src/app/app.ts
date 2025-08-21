@@ -9,4 +9,12 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   
+  loggedInUserName: string = '';
+
+  constructor(){
+    const loggedUserData = localStorage.getItem('Angular20User');
+    if(loggedUserData!=null){
+      this.loggedInUserName = loggedUserData;
+    }
+  }
 }
