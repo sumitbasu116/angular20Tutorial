@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,12 @@ export class Login {
     password:''
   }
 
+  router = inject(Router);
+
   onLogin(){
-    
+    if(this.loginObj.username == 'Admin' &&
+      this.loginObj.password == '112233'){
+        this.router.navigateByUrl("admin");
+    }
   }
 }
