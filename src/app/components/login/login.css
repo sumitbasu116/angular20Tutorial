@@ -1,0 +1,53 @@
+:root{
+--bg-start:#0ea5e9; /* sky-500 */
+--bg-end:#6366f1; /* indigo-500 */
+--card-bg: #ffffff;
+--muted:#6b7280;
+--ring:#2563eb;
+}
+html, body { height: 100%; }
+body{
+background: radial-gradient(1200px 800px at 10% 10%, rgba(255,255,255,.25), transparent 50%),
+radial-gradient(1000px 700px at 90% 20%, rgba(255,255,255,.15), transparent 60%),
+linear-gradient(135deg, var(--bg-start), var(--bg-end));
+display: flex; align-items: center; justify-content: center;
+font-synthesis-weight: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+.auth-wrapper{ width:100%; max-width: 1080px; padding: 24px; }
+.auth-card{
+background: rgba(255,255,255,0.9);
+backdrop-filter: blur(8px);
+border: 1px solid rgba(255,255,255,0.6);
+box-shadow: 0 20px 40px rgba(2,6,23,.18);
+border-radius: 1.25rem;
+overflow: hidden;
+}
+.brand-badge{
+display: inline-flex; align-items:center; gap:.5rem; font-weight:700; letter-spacing:.3px;
+}
+.brand-badge .dot{ width:10px; height:10px; border-radius:999px; background: linear-gradient(135deg, var(--bg-start), var(--bg-end)); display:inline-block; }
+
+
+.side-panel{
+background: linear-gradient(160deg, rgba(255,255,255,.18), rgba(255,255,255,.05));
+position: relative;
+isolation: isolate;
+}
+.side-panel::before{
+content:""; position:absolute; inset:0; z-index:-1;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" opacity="0.25"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="%23ffffff" offset="0%"/><stop stop-color="%23ffffff" stop-opacity="0.4" offset="100%"/></linearGradient></defs><circle cx="60" cy="80" r="6" fill="url(%23g)"/><circle cx="110" cy="160" r="4" fill="url(%23g)"/><circle cx="300" cy="120" r="5" fill="url(%23g)"/><circle cx="240" cy="60" r="3" fill="url(%23g)"/><circle cx="200" cy="200" r="8" fill="url(%23g)"/><circle cx="330" cy="240" r="4" fill="url(%23g)"/></svg>') center/cover no-repeat;
+}
+
+
+.form-control:focus { box-shadow: 0 0 0 .25rem rgba(37, 99, 235, .15); border-color: var(--ring); }
+.btn-primary { background: var(--ring); border-color: var(--ring); }
+.btn-primary:hover { filter: brightness(.95); }
+.divider{ position: relative; text-align:center; color: var(--muted); font-size:.875rem; }
+.divider::before, .divider::after{
+content:""; position:absolute; top:50%; width:40%; height:1px; background: rgba(2,6,23,.12);
+}
+.divider::before{ left:0; }
+.divider::after{ right:0; }
+@media (max-width: 991.98px){
+.side-panel{ display:none; }
+}
